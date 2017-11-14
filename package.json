@@ -3,6 +3,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "bytearena-sdk": "0.0.12"
+    "bytearena-sdk": "0.0.13"
   }
 }
