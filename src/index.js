@@ -1,5 +1,6 @@
-const {vector: {Vector2}, comm} = require('bytearena-sdk');
+import {vector, comm} from 'bytearena-sdk';
 
+const Vector2 = vector.Vector2;
 const agent = comm.connect();
 
 agent.on('perception', perception => {

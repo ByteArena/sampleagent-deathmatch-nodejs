@@ -1,8 +1,27 @@
 {
   "scripts": {
-    "start": "node index.js"
+    "start": "node dist",
+      "build": "babel --out-dir dist src"
   },
   "dependencies": {
     "bytearena-sdk": "0.0.13"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "current"
+          },
+          "debug": true
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32"
   }
 }
