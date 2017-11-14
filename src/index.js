@@ -8,7 +8,7 @@ agent.on('perception', perception => {
 
   const force = new Vector2(0, 1);
 
-  actions.push({ Method: 'steer', Arguments: force.toArray(5) });
+  actions.push({ method: 'steer', arguments: force.toArray(5) });
 
   // Pushing batch of mutations
   agent.takeActions(actions);
