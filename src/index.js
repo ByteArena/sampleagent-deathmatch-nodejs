@@ -9,31 +9,45 @@ const agent = comm.connect();
 agent.on("perception", perception => {
   const actions = [];
 
-  // We can move by steering the agent
-  // The steering is a force represented by a vector
-  // Describing the desired movement of the agent on the x and y axes
+  // We can move by steering the agent.
+  // The steering is a force represented
+  // by a vector describing the desired
+  // movement on the x and y axes.
+
+  // In the following diagram,
+  // the agent is represented by ▲
+  // (nose pointing upwards)
 
   /*
-                   +y
-         Forward    |     Forward
-            left    |     right
-                    |
-    -x -------------O------------- +x
-                    |
-         Backward   |     Backward
-             left   |     right
-                   -y
-  */
+                  +y
+        Forward    |     Forward
+          left    |     right
+                  |
+  -x ------------ ▲ ------------ +x
+                  |
+        Backward   |     Backward
+            left   |     right
+                  -y
+*/
 
-  // In this scaffolding code we're randomly moving without avoiding obstacles
-  // The game gave us a data structure containing our current perception of the world
-  // You probably want to handle this perception to react accordingly instead
+  // As you can see:
+  // To move forward, we have to give a y > 0.
+  // To turn right, an x > 0,
+  // To turn left, an x < 0>
+
+  // In this scaffolding code we're moving
+  // randomly without avoiding obstacles.
+  // We received a data structure containing
+  // our current perception of the world.
+  // You probably want to handle this
+  // perception to react accordingly instead.
 
   const direction = Math.random() < 0.5 ? -1 : 1; // -1: left, 1: right
-  const x = direction * Math.random()
+  const x = direction * Math.random();
   const y = 3; // move forward 3 meters
 
-  const steering = new Vector2(x, y); // x, y coords; means "I want to move x meters lateraly and y meters forward"
+  // x, y coords mean "I want to move x meters lateraly and y meters forward"
+  const steering = new Vector2(x, y);
   actions.push({ method: "steer", arguments: steering.toArray() });
 
   // Submitting our actions for this turn

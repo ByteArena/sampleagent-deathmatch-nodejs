@@ -1,18 +1,17 @@
 FROM node:7
+ENV NPM_CONFIG_LOGLEVEL error
 
-ENV NPM_CONFIG_LOGLEVEL warn
-
+# /usr/app is the root of our code in the container
 WORKDIR /usr/app
 
-# Install app dependencies
-COPY package.json /usr/app/
+# Bundle our source code in the container
+COPY . /usr/app/
+
+# Install dependencies
 RUN npm install
 
-# Bundle app source
-COPY . /usr/app
-
-# Build source
+# Build the source
 RUN npm run build
 
+# Tell Docker how to run our code
 CMD [ "npm", "start" ]
-
