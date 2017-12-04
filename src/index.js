@@ -11,11 +11,34 @@ agent.on("perception", perception => {
 
   // Get a steering vector based on perception
   let steering = navigate(perception);
+  const shooting = shoot(perception);
 
   // Submitting our actions for this turn
   actions.push({ method: "steer", arguments: steering.toArray() });
+  if (shooting) actions.push({ method: "shoot", arguments: shooting.toArray() });
+
   agent.takeActions(actions);
 });
+
+// shoot() returns either null or a vector
+// targeting the closest agent in sight
+const shoot = perception => {
+
+  let shooting = null;
+
+  // for everything that stands in our field of view
+  for (const perceived of perception.vision) {
+    if (perceived.tag != "agent") continue;
+
+    const otherAgentPosition = Vector2.fromArray(perceived.center);
+
+    if (!shooting || otherAgentPosition.mag() < shooting.mag()) {
+      shooting = otherAgentPosition;
+    }
+  }
+
+  return shooting;
+};
 
 // Returns a steering vector exploring the world,
 // or dodging an obstacle if there's any
