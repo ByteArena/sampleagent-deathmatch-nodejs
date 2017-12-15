@@ -4,7 +4,7 @@
       "build": "babel --out-dir dist src"
   },
   "dependencies": {
-    "bytearena-sdk": "0.0.14"
+    "bytearena-sdk": ">=0.2.0"
   },
   "babel": {
     "presets": [
