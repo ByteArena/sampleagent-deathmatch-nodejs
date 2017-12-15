@@ -1,4 +1,6 @@
 {
+  "id": "sampleagent-deathmatch-nodejs",
+  "name": "Sample deathmatch agent for Node.js",
   "license": "MIT",
   "language": "nodejs",
   "gamemode": "deathmatch",
