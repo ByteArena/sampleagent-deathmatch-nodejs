@@ -1,0 +1,10 @@
+{
+  "id": "sampleagent-deathmatch-nodejs",
+  "name": "Sample deathmatch agent for Node.js",
+  "license": "MIT",
+  "language": "nodejs",
+  "gamemode": "deathmatch",
+  "repourl": "https://github.com/ByteArena/sampleagent-deathmatch-nodejs",
+  "description": "Sample Node.js agent",
+  "avatarurl": "https://avatars1.githubusercontent.com/u/28099873"
+}
