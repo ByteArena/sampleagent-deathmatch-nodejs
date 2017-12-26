@@ -20,13 +20,13 @@ agent.on("perception", perception => {
 
   /*
                   +y
-        Forward    |     Forward
+        Forward   |     Forward
           left    |     right
                   |
   -x ------------ ▲ ------------ +x
                   |
-        Backward   |     Backward
-            left   |     right
+       Backward   |     Backward
+           left   |     right
                   -y
 */
 
@@ -51,5 +51,5 @@ agent.on("perception", perception => {
   actions.push({ method: "steer", arguments: steering.toArray() });
 
   // Submitting our actions for this turn
-  agent.takeActions(actions);
+  agent.do(actions);
 });
