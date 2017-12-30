@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node src",
+    "start": "node src"
   },
   "dependencies": {
     "bytearena-sdk": ">=0.2.0"
