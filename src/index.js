@@ -1,5 +1,4 @@
-// import SDK and vector facilities to ease development
-import { vector, comm } from "bytearena-sdk";
+const { vector, comm } = require("bytearena-sdk");
 const Vector2 = vector.Vector2;
 
 // Connecting our agent

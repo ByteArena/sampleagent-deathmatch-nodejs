@@ -1,27 +1,9 @@
 {
+  "license": "MIT",
   "scripts": {
-    "start": "node dist",
-      "build": "babel --out-dir dist src"
+    "start": "node src"
   },
   "dependencies": {
-    "bytearena-sdk": "0.0.14"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/env",
-        {
-          "targets": {
-            "node": "current"
-          },
-          "debug": true
-        }
-      ]
-    ]
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.32",
-    "@babel/core": "^7.0.0-beta.32",
-    "@babel/preset-env": "^7.0.0-beta.32"
+    "bytearena-sdk": ">=0.2.0"
   }
 }
