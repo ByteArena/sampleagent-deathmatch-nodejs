@@ -1,4 +1,4 @@
-import { vector, comm } from "bytearena-sdk";
+const { vector, comm } = require("bytearena-sdk");
 const Vector2 = vector.Vector2;
 
 // Connecting our agent to the game using the BA JS SDK
